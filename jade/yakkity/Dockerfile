@@ -1,4 +1,4 @@
-FROM ubuntu:16.10
+FROM synrobo/ubuntu:16.04
 
 # Setup package sources
 RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu xenial main" > /etc/apt/sources.list.d/ros-latest.list' && \
