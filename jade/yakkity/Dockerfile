@@ -19,3 +19,6 @@ RUN rosdep update && \
     catkin_init_workspace && \
     cd ../ && catkin_make -j4 && \
     echo ". /home/ros/catkin_ws/devel/setup.bash" >> ~/.bashrc
+
+ADD ros-entrypoint.sh /ros-entrypoint.sh
+ENTRYPOINT [ "/ros-entrypoint.sh" ]
