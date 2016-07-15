@@ -24,5 +24,7 @@ RUN rosdep update && \
     cd ../ && catkin_make -j4 && \
     echo ". /home/ros/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 ADD ros-entrypoint.sh /ros-entrypoint.sh
 ENTRYPOINT [ "/ros-entrypoint.sh" ]
